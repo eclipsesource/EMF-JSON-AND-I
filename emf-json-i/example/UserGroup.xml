@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<task:UserGroup
+	xmlns:task="http://eclipse/org/emf/ecp/makeithappen/model/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://eclipse/org/emf/ecp/makeithappen/model/task ../model/task.xsd ">
+	<users firstName="Maximilian" lastName="Koegel" heigth="175"
+		email="mkoegel@eclipsesource.com">
+		<tasks name="Prepare EMF, JSON &amp; I Talk" done="true" />
+		<tasks name="Hold EMF, JSON &amp; I Talk" />
+	</users>
+</task:UserGroup>

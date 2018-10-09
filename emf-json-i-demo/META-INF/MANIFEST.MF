@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Emf-json-i-demo
+Bundle-SymbolicName: emf-json-i-demo
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: EclipseSource
+Automatic-Module-Name: emf-json-i-demo
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: emf-json-i;bundle-version="0.1.0",
+ org.junit,
+ com.fasterxml.jackson.core.jackson-core;bundle-version="2.9.1",
+ com.fasterxml.jackson.core.jackson-databind;bundle-version="2.9.1",
+ org.emfjson.jackson;bundle-version="1.2.0"
+Bundle-ClassPath: .,
+ lib/org.everit.json.schema-1.9.2.jar,
+ lib/json-20180813.jar,
+ lib/handy-uri-templates-2.1.7.jar

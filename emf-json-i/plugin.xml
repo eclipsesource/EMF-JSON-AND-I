@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated task -->
+      <package
+            uri="http://eclipse/org/emf/ecp/makeithappen/model/task"
+            class="eclipse.org.emf.ecp.makeithappen.model.task.TaskPackage"
+            genModel="model/task.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated task -->
+      <parser
+            type="task"
+            class="eclipse.org.emf.ecp.makeithappen.model.task.util.TaskResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

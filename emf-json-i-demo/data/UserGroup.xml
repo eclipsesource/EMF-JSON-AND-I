@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<task:UserGroup xmlns:task="http://eclipse/org/emf/ecp/makeithappen/model/task">
+  <users firstName="Maximilian" lastName="Koegel" email="mkoegel@eclipsesource.com">
+    <tasks name="Prepare EMF, JSON &amp; I Talk" done="true"/>
+    <tasks name="Hold EMF, JSON &amp; I Talk"/>
+  </users>
+</task:UserGroup>

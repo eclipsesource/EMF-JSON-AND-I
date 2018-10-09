@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:org.eclipse.emf.ecp.makeithappen.model.task="http://eclipse/org/emf/ecp/makeithappen/model/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://eclipse/org/emf/ecp/makeithappen/model/task">
+  <xsd:element name="Task" type="org.eclipse.emf.ecp.makeithappen.model.task:Task"/>
+  <xsd:element name="User" type="org.eclipse.emf.ecp.makeithappen.model.task:User"/>
+  <xsd:element name="UserGroup" type="org.eclipse.emf.ecp.makeithappen.model.task:UserGroup"/>
+  <xsd:complexType name="Task">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="subTasks" type="org.eclipse.emf.ecp.makeithappen.model.task:Task"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+    <xsd:attribute name="assignee" type="xsd:anyURI"/>
+    <xsd:attribute name="dueDate" type="xsd:dateTime"/>
+    <xsd:attribute name="done" type="xsd:boolean"/>
+  </xsd:complexType>
+  <xsd:complexType name="User">
+  	<xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="tasks" type="org.eclipse.emf.ecp.makeithappen.model.task:Task"/>
+    </xsd:sequence>
+    <xsd:attribute name="firstName" type="xsd:string"/>
+    <xsd:attribute name="lastName" type="xsd:string" use="required"/>
+    <xsd:attribute name="gender" type="org.eclipse.emf.ecp.makeithappen.model.task:Gender"/>
+    <xsd:attribute name="active" type="xsd:boolean"/>
+    <xsd:attribute name="timeOfRegistration" type="xsd:dateTime"/>
+    <xsd:attribute name="weight" type="xsd:double"/>
+    <xsd:attribute name="heigth" type="xsd:int"/>
+    <xsd:attribute name="nationality" type="org.eclipse.emf.ecp.makeithappen.model.task:Nationality"/>
+    <xsd:attribute name="dateOfBirth" type="org.eclipse.emf.ecp.makeithappen.model.task:DateOfBirth"/>
+    <xsd:attribute name="email" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="UserGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="users" type="org.eclipse.emf.ecp.makeithappen.model.task:User"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:simpleType name="Gender">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Male"/>
+      <xsd:enumeration value="Female"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Nationality">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="German"/>
+      <xsd:enumeration value="French"/>
+      <xsd:enumeration value="UK"/>
+      <xsd:enumeration value="US"/>
+      <xsd:enumeration value="Spanish"/>
+      <xsd:enumeration value="Italian"/>
+      <xsd:enumeration value="Russian"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DateOfBirth">
+    <xsd:restriction base="xsd:date"/>
+  </xsd:simpleType>
+</xsd:schema>
