@@ -5,15 +5,12 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.emfjson.jackson.module.EMFModule;
 import org.emfjson.jackson.resource.JsonResourceFactory;
@@ -70,8 +67,6 @@ public class RoundTripDemo {
 	private ResourceSet getXMLResourceSet() {
 		ResourceSet rs = new ResourceSetImpl();
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMLResourceFactoryImpl());
-		HashMap<String, Object> options = new LinkedHashMap<>();
-		options.put(XMLResource.OPTION_ENCODING, "UTF-8");
 		return rs;
 	}
 
@@ -101,8 +96,6 @@ public class RoundTripDemo {
 		mapper.registerModule(module);
 		JsonResourceFactory factory = new JsonResourceFactory(mapper);
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", factory);
-		HashMap<String, Object> options = new LinkedHashMap<>();
-		options.put(XMLResource.OPTION_ENCODING, "UTF-8");
 		return rs;
 	}
 
